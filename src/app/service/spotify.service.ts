@@ -13,7 +13,7 @@ const url =` https://api.spotify.com/v1/${query}`
   const headers = new HttpHeaders({
     // el token expiran cada hora para probar la app tendrian que generar uno nuevo 
     
-    'Authorization':'Bearer BQDMC9LtL_7aaeM3ds6L1RProuVj9E8W6HLveTxWMUU_2ZcorCmsdJ8n32Xv_FGzoZkqnHg7j93QEDFYTfk'
+    'Authorization':'Bearer BQC2m2j0APPml3wAeEKyi4Sji0gBileG9jNsIjGuOSgnCy0aos_GpCvIDUd2OmwUm_kOPxHJ5ps8HcJ613I'
   });
 
   return this.http.get(url , {headers});
