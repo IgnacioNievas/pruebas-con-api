@@ -1,0 +1,45 @@
+<app-loding *ngIf='loding'></app-loding>
+<div *ngIf='!loding' class="row animated fadeIn">
+    <div class="col m-2">
+        <p> <img [src]='artist.images|noimage' class="img-thumbnail img-circle" style='background-position: top;'></p>
+        <a [href]="artist.external_urls.spotify">Ir la pagina del artista</a>
+    </div>
+    <div class="col m-2">
+        <h1>{{artist.name}}</h1>
+    </div>
+    <div class="col m-4 text-right">
+        <p> <button routerLink='/home' class="btn btn-outline-light ">Ir a Home</button> </p>
+        <button routerLink='/search' class="btn btn-outline-danger ">Regresar a la busqueda</button>
+
+    </div>
+
+</div>
+
+<div class="row m-5">
+    <div class="col">
+        <table class='table'>
+
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Cancion</th>
+                    <th>Vista Previa</th>
+                    <th>Reproducir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let tracks of toptrack'>
+                    <td>
+                        <img [src]='tracks.album.images|noimage' class="img-thumb img-circle">
+                    </td>
+                    <td>{{tracks.album.name}}</td>
+                    <td>{{tracks.name}}</td>
+                    <td><audio [src]='tracks.preview_url' controls></audio></td>
+                    <td><iframe [src]='tracks.uri|domseguro' width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="input ">
+    <div class="input-group-append">
+        <input placeholder="Buscar aritistas..." (keyup.enter)='buscar(termino.value)' type="text" class="form-control" #termino>
+        <button class="btn btn-outline-success " type="button" (click)='buscar(termino.value)'>Buscar</button>
+    </div>
+</div>
+
+<app-loding class='m-5' *ngIf='loding'></app-loding>
+<app-tarjetas *ngIf='!loding' [items]='artista'></app-tarjetas>

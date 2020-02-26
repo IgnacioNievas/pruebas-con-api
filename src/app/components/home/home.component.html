@@ -1,0 +1,8 @@
+<app-loding *ngIf='loding'>
+</app-loding>
+<div *ngIf='error' class="alert alert-success animeted fadeIn  ">
+    <h1 class='fa fa-exclamation-triangle'> Error</h1>
+    <p>{{err}}</p>
+</div>
+
+<app-tarjetas [items]='canciones'></app-tarjetas>
